@@ -354,6 +354,48 @@ input[type="submit"]:hover {
   object-fit: cover; /* تجعل الصور تتناسب مع الإطار المحدد */
   width: 100%;
 }
+
+/* استهداف الأجهزة المحمولة فقط */
+/* استهداف الأجهزة المحمولة فقط */
+@media (max-width: 768px) {
+    /* تغيير لون أيقونة البحث */
+    .menu_side .search_icon a i {
+        color: white !important; /* التأكيد على اللون الأبيض */
+    }
+
+    /* تأكد من أن جميع الروابط في القائمة تظهر باللون الأبيض أيضًا */
+    .menu_side a {
+        color: white !important; /* التأكيد على اللون الأبيض للروابط */
+    }
+}
+
+#navbar_menu.small-screen #menu-button {
+		display: block;
+		padding: 0;
+		color: #fff;
+		cursor: pointer;
+		font-size: 0;
+		text-transform: uppercase;
+		font-weight: 600;
+		width: 40px;
+		height: 40px;
+		border: solid #ffffff 2px;
+		border-radius: 5px;
+		position: absolute;
+		top: -67px;
+		left: 20px;
+	}
+	#navbar_menu.small-screen #menu-button::after {
+		position: absolute;
+		top: 12px;
+		right: 8px;
+		display: block;
+		height: 13px;
+		width: 20px;
+		border-top: 3px solid #ffffff;
+		border-bottom: 3px solid #ffffff;
+		content: '';
+	}
 </style>
 <body id="default_theme" class="it_service">
 <!-- loader -->
@@ -451,7 +493,6 @@ input[type="submit"]:hover {
     {% endblock body %}
 
 
-    '''
 
 <!-- section -->
 <div class="section">
@@ -493,10 +534,9 @@ input[type="submit"]:hover {
               <h2 style="text-align: right;">خدماتنا</h2>
             </div>
             <ul class="footer-menu" style="text-align: right;">
-              <li><a href="it_about.html"><i class="fa fa-angle-left"></i> لابتوبات</a></li>
-              <li><a href="it_term_condition.html"><i class="fa fa-angle-left"></i> حقائب</a></li>
-              <li><a href="it_privacy_policy.html"><i class="fa fa-angle-left"></i> اكسسوار لابتوب</a></li>
-              <li><a href="it_news.html"><i class="fa fa-angle-left"></i> اكسسوار موبايل</a></li>
+              <li><a href="{% url 'laptop:laptop_shop' %}"><i class="fa fa-angle-left"></i> لابتوبات</a></li>
+              <li><a href="{% url 'laptop:acessoryl' %}"><i class="fa fa-angle-left"></i> اكسسوار لابتوب</a></li>
+              <li><a href="{% url 'laptop:acessorym' %}"><i class="fa fa-angle-left"></i> اكسسوار موبايل</a></li>
             </ul>
           </div>
           <div class="col-md-6">
@@ -516,9 +556,9 @@ input[type="submit"]:hover {
                         </a>
                     </li>
                     <!-- فيسبوك -->
-                    <li class="list-inline-item">
+                    <li style="padding-right: 10px;padding-left: 10px;" class="list-inline-item">
                         <a href="https://www.facebook.com/yourpage" target="_blank">
-                            <i class="fa fa-facebook" style="font-size:30px;color:#3b5998;"></i>
+                            <i  class="fa fa-facebook" style="font-size:30px;color:#3b5998;"></i>
                         </a>
                     </li>
                     <!-- قناة تيليغرام -->
